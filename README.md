@@ -1,3 +1,17 @@
+# Fork of [postman-jsdoc-theme](https://github.com/postmanlabs/postman-jsdoc-theme)
+
+This fork is only useful while using this jsdoc plugin: https://github.com/antonin-lebrard/jsdoc-nav-utils
+
+This theme does nothing more than the original if not used with the plugin, and the plugin does nothing without using this theme
+
+This is very barebone, and it was mostly to try to hack the jsdoc generation to provide 'categories' containing all classic jsdoc tag definitions (like 'Classes', 'Namespaces', etc..)
+
+Using this theme with some tags defined by this [plugin](https://github.com/antonin-lebrard/jsdoc-nav-utils), the navigation bar at the left will have very basic expanding 'directories' or 'categories' which might be helpful to organize the code in packages of classes, namespaces, etc..
+
+This is not at all tested on a diverse set of documentations, but this work well enough for my use case
+
+## Original README.md from here
+
 # Postman JSDoc3 Theme
 
 A clean, responsive documentation template theme for JSDoc 3, based on [LatoDoc](https://github.com/smeijer/latodoc)
