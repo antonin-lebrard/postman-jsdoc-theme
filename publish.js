@@ -446,21 +446,32 @@ function buildDirNav(members) {
 
   const membersKeys = Object.keys(members);
   membersKeys.forEach(key => {
-    const member = members[key];
-    nav += '<div class="directory">';
-    nav += '<div class="directoryNameContainer"><div class="directoryArrow">►</div>';
-    nav += `<div class="directoryName">${key}</div></div>`;
-    nav += '<div class="directoryContent">';
-    nav += buildMemberNav(member.tutorials, 'Tutorials', seenTutorials, linktoTutorial, true);
-    nav += buildMemberNav(member.classes, 'Classes', seen, linkto);
-    nav += buildMemberNav(member.modules, 'Modules', {}, linkto);
-    nav += buildMemberNav(member.externals, 'Externals', seen, linktoExternal);
-    nav += buildMemberNav(member.events, 'Events', seen, linkto);
-    nav += buildMemberNav(member.namespaces, 'Namespaces', seen, linkto);
-    nav += buildMemberNav(member.mixins, 'Mixins', seen, linkto);
-    nav += buildMemberNav(member.interfaces, 'Interfaces', seen, linkto);
-    nav += '</div></div>'
+    if (key !== 'undefined') {
+      const member = members[key];
+      nav += '<div class="directory">';
+      nav += '<div class="directoryNameContainer"><div class="directoryArrow">►</div>';
+      nav += `<div class="directoryName">${key}</div></div>`;
+      nav += '<div class="directoryContent">';
+      nav += buildMemberNav(member.tutorials, 'Tutorials', seenTutorials, linktoTutorial, true);
+      nav += buildMemberNav(member.classes, 'Classes', seen, linkto);
+      nav += buildMemberNav(member.modules, 'Modules', {}, linkto);
+      nav += buildMemberNav(member.externals, 'Externals', seen, linktoExternal);
+      nav += buildMemberNav(member.events, 'Events', seen, linkto);
+      nav += buildMemberNav(member.namespaces, 'Namespaces', seen, linkto);
+      nav += buildMemberNav(member.mixins, 'Mixins', seen, linkto);
+      nav += buildMemberNav(member.interfaces, 'Interfaces', seen, linkto);
+      nav += '</div></div>'
+    }
   })
+
+  nav += buildMemberNav(members.undefined.tutorials, 'Tutorials', seenTutorials, linktoTutorial, true);
+  nav += buildMemberNav(members.undefined.classes, 'Classes', seen, linkto);
+  nav += buildMemberNav(members.undefined.modules, 'Modules', {}, linkto);
+  nav += buildMemberNav(members.undefined.externals, 'Externals', seen, linktoExternal);
+  nav += buildMemberNav(members.undefined.events, 'Events', seen, linkto);
+  nav += buildMemberNav(members.undefined.namespaces, 'Namespaces', seen, linkto);
+  nav += buildMemberNav(members.undefined.mixins, 'Mixins', seen, linkto);
+  nav += buildMemberNav(members.undefined.interfaces, 'Interfaces', seen, linkto);
 
   if (members.undefined.globals.length) {
     let globalNav = '';
