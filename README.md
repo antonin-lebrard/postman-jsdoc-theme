@@ -22,7 +22,7 @@ Use the theme and plugin in your `jsdoc.conf`:
   "source": {
     "include": [ "whatever/*", "README.md" ]
   },
-  "plugins": [ "plugins/markdown", "postman-jsdoc-theme/plugin" ],
+  "plugins": [ "plugins/markdown", "node_modules/postman-jsdoc-theme/plugin" ],
   "opts": {
     "template": "node_modules/postman-jsdoc-theme",
     "recurse": true,
