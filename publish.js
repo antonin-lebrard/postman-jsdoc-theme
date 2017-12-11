@@ -661,7 +661,7 @@ exports.publish = function(taffyData, opts, tutorials) {
   let members = helper.getMembers(data);
   let linkedMembers = linkDirectories(members)
   linkedMembers.undefined.tutorials = tutorials.children
-  console.log(linkedMembers)
+  
   members.tutorials = tutorials.children;
 
   // output pretty-printed source files by default
