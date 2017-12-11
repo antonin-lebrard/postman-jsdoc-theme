@@ -465,6 +465,9 @@ function buildDirNav(members) {
   nav += buildMemberNav(members.undefined.mixins, 'Mixins', seen, linkto);
   nav += buildMemberNav(members.undefined.interfaces, 'Interfaces', seen, linkto);
 
+  if (members.undefined.globals === undefined) {
+    return nav;
+  }
   if (members.undefined.globals.length) {
     let globalNav = '';
 

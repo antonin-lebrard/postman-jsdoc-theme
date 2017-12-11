@@ -240,6 +240,12 @@ nav > ul > li > a {
   font-weight: 500;
 }
 
+.categoryContent > ul > li > a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 nav ul ul {
   margin-bottom: 10px
 }
