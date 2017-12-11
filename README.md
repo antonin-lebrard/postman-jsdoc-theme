@@ -10,6 +10,8 @@ Using this theme with some tags defined by here: [plugin.js](https://github.com/
 
 This is not at all tested on a diverse set of documentations, but this work well enough for my use case
 
+![gif with categories](https://github.com/antonin-lebrard/postman-jsdoc-theme/blob/master/capture%20with%20categories.gif)
+
 ## Usage
 
 Use the theme and plugin in your `jsdoc.conf`: 
@@ -55,6 +57,11 @@ class ObjExample {
 }
 ```
 Again I have not thouroughly tested it, but it seems to works well with class definitions
+
+To showcase a little the original theme, which I found particularly clear, and easy to navigate:
+This is the theme without the categories:
+
+![gif without categories](https://github.com/antonin-lebrard/postman-jsdoc-theme/blob/master/capture%20without%20categories.gif)
 
 ## Original README.md from here
 
