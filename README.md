@@ -1,14 +1,60 @@
 # Fork of [postman-jsdoc-theme](https://github.com/postmanlabs/postman-jsdoc-theme)
 
-This fork is only useful while using this jsdoc plugin: https://github.com/antonin-lebrard/jsdoc-nav-utils
+This fork is only useful while using the jsdoc plugin defined inside it, see <b>Usage</b> 
 
 This theme does nothing more than the original if not used with the plugin, and the plugin does nothing without using this theme
 
 This is very barebone, and it was mostly to try to hack the jsdoc generation to provide 'categories' containing all classic jsdoc tag definitions (like 'Classes', 'Namespaces', etc..)
 
-Using this theme with some tags defined by this [plugin](https://github.com/antonin-lebrard/jsdoc-nav-utils), the navigation bar at the left will have very basic expanding 'directories' or 'categories' which might be helpful to organize the code in packages of classes, namespaces, etc..
+Using this theme with some tags defined by here: [plugin.js](https://github.com/antonin-lebrard/postman-jsdoc-theme/blob/master/plugin.js), the navigation bar at the left will have very basic expanding 'directories' or 'categories' which might be helpful to organize the code in packages of classes, namespaces, etc..
 
 This is not at all tested on a diverse set of documentations, but this work well enough for my use case
+
+## Usage
+
+in your `jsdoc.conf`: 
+```json
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": [ "jsdoc" ]
+  },
+  "source": {
+    "include": [ "whatever/*", "README.md" ]
+  },
+  "plugins": [ "plugins/markdown", "postman-jsdoc-theme/plugin" ], // important to put the plugin here
+  "opts": {
+    "template": "node_modules/postman-jsdoc-theme",
+    "recurse": true,
+    "encoding": "utf8",
+    "destination": "./docs/"
+  }
+}
+```
+
+And in your source files, put these tags:
+
+Define a directory. It does nothing without the use of the @inside tag, and vice-versa.
+```javascript
+/**
+ * @directory the_name_of_the_directory`
+ */
+```
+
+Use the tag `@inside` to put the symbol you're documenting inside the directory you have defined
+```javascript
+/**
+ * @inside the_name_of_the_directory
+ */ 
+class ObjExample {
+  // this will be automaticaly inside the symbol `ObjExample` which is inside `the_name_of_the_directory`
+  constructor() {}
+  // same with every definition inside the class, but this only happens because jsdoc itself
+  // manage the automatic inclusion inside the class symbol
+  exampleFunction() {}
+}
+```
+Again I have not thouroughly tested it, but it seems to works well with class definitions
 
 ## Original README.md from here
 
