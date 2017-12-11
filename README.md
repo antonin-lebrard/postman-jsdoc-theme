@@ -34,20 +34,20 @@ Use the theme and plugin in your `jsdoc.conf`:
 
 And in your source files, put these tags:
 
-Define a directory. It does nothing without the use of the @inside tag, and vice-versa.
+Define a category. It does nothing without the use of the @inside tag, and vice-versa.
 ```javascript
 /**
- * @directory the_name_of_the_directory`
+ * @category the_name_of_the_category`
  */
 ```
 
-Use the tag `@inside` to put the symbol you're documenting inside the directory you have defined
+Use the tag `@inside` to put the symbol you're documenting inside the category you have defined
 ```javascript
 /**
- * @inside the_name_of_the_directory
+ * @inside the_name_of_the_category
  */ 
 class ObjExample {
-  // this will be automaticaly inside the symbol `ObjExample` which is inside `the_name_of_the_directory`
+  // this will be automaticaly inside the symbol `ObjExample` which is inside `the_name_of_the_category`
   constructor() {}
   // same with every definition inside the class, but this only happens because jsdoc itself
   // manage the automatic inclusion inside the class symbol
