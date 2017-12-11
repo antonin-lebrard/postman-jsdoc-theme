@@ -12,7 +12,7 @@ This is not at all tested on a diverse set of documentations, but this work well
 
 ## Usage
 
-in your `jsdoc.conf`: 
+Use the theme and plugin in your `jsdoc.conf`: 
 ```json
 {
   "tags": {
@@ -22,7 +22,7 @@ in your `jsdoc.conf`:
   "source": {
     "include": [ "whatever/*", "README.md" ]
   },
-  "plugins": [ "plugins/markdown", "postman-jsdoc-theme/plugin" ], // important to put the plugin here
+  "plugins": [ "plugins/markdown", "postman-jsdoc-theme/plugin" ],
   "opts": {
     "template": "node_modules/postman-jsdoc-theme",
     "recurse": true,
