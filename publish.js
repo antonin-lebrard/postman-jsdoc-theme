@@ -338,23 +338,15 @@ function linktoExternal(longName, name) {
 function linkDirectories(members) {
   const linked = {}
   const membersKey = Object.keys(members)
-  for (const key of membersKey) {
-    for (const def of members[key]) {
-      if (def.directory !== undefined) {
-        if (def.directory === 'undefined') {
-          logger.warn('You should not use "undefined" as the name of a directory')
-        }
-        if (linked[def.directory] === undefined) {
-          linked[def.directory] = {};
-        }
-      }
-    }
-  }
   linked.undefined = {}
   for (const key of membersKey) {
     for (const def of members[key]) {
-      // is declared as in a directory
+      // is declared as in a category
       if (def.inside !== undefined) {
+        if (def.inside === 'undefined')
+          logger.warn('You should not use "undefined" as the name of a category')
+        if (linked[def.inside] === undefined)
+          linked[def.inside] = {}
         if (linked[def.inside][key] === undefined)
           linked[def.inside][key] = []
         linked[def.inside][key].push(def)
@@ -448,10 +440,10 @@ function buildDirNav(members) {
   membersKeys.forEach(key => {
     if (key !== 'undefined') {
       const member = members[key];
-      nav += '<div class="directory">';
-      nav += '<div class="directoryNameContainer"><div class="directoryArrow">►</div>';
-      nav += `<div class="directoryName">${key}</div></div>`;
-      nav += '<div class="directoryContent">';
+      nav += '<div class="category">';
+      nav += '<div class="categoryNameContainer"><div class="categoryArrow">►</div>';
+      nav += `<div class="categoryName">${key}</div></div>`;
+      nav += '<div class="categoryContent">';
       nav += buildMemberNav(member.tutorials, 'Tutorials', seenTutorials, linktoTutorial, true);
       nav += buildMemberNav(member.classes, 'Classes', seen, linkto);
       nav += buildMemberNav(member.modules, 'Modules', {}, linkto);

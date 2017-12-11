@@ -1,9 +1,9 @@
 'use strict'
 
-const directoryTag = {
+const categoryTag = {
   mustHaveValue: true,
   onTagged: function (doclet, tag) {
-    doclet.directory = tag.value
+    doclet.category = tag.value
   }
 }
 
@@ -15,6 +15,6 @@ const insideTag = {
 }
 
 module.exports.defineTags = function(dictionary) {
-  dictionary.defineTag('directory', directoryTag)
+  dictionary.defineTag('category', categoryTag)
   dictionary.defineTag('inside', insideTag)
 }

@@ -101,34 +101,34 @@ function setDisplay(contentEl, arrowEl, isHidden) {
 (function() {
   /**
    * Structure of html :
-   *  - directory:
-   *    |_ directoryNameContainer
-   *    |   |_ directoryArrow
-   *    |   |_ directoryName
-   *    |_ directoryContent
+   *  - category:
+   *    |_ categoryNameContainer
+   *    |   |_ categoryArrow
+   *    |   |_ categoryName
+   *    |_ categoryContent
    */
-  /// get all directoryNameContainer
-  var dirNameEls = document.getElementsByClassName('directoryNameContainer')
+  /// get all categoryNameContainer
+  var dirNameEls = document.getElementsByClassName('categoryNameContainer')
   if (!dirNameEls) return
   dirNameEls = Array.prototype.slice.call(dirNameEls)
   if (dirNameEls.length < 1) return
-  /// iterate through each directoryNameContainer
+  /// iterate through each categoryNameContainer
   dirNameEls.forEach(dirNameContainerEl => {
     if (!dirNameContainerEl.parentElement) return
-    /// get the directoryContent alongside it
-    var els = dirNameContainerEl.parentElement.getElementsByClassName('directoryContent')
+    /// get the categoryContent alongside it
+    var els = dirNameContainerEl.parentElement.getElementsByClassName('categoryContent')
     if (!els || els.length < 1) return
     var contentEl = els[0]
-    /// get the directoryArrow inside it
-    var dirNameArrowEl = dirNameContainerEl.getElementsByClassName('directoryArrow')
+    /// get the categoryArrow inside it
+    var dirNameArrowEl = dirNameContainerEl.getElementsByClassName('categoryArrow')
     if (!dirNameArrowEl || dirNameArrowEl.length < 1) return
     dirNameArrowEl = dirNameArrowEl[0]
-    /// get the directoryName inside it
-    var dirNameEl = dirNameContainerEl.getElementsByClassName('directoryName')
+    /// get the categoryName inside it
+    var dirNameEl = dirNameContainerEl.getElementsByClassName('categoryName')
     if (!dirNameEl || dirNameEl.length < 1) return
     dirNameEl = dirNameEl[0]
     var sessionKey = dirNameEl.innerHTML
-    /// get the precedent state of the directory
+    /// get the precedent state of the category
     var isHidden = getPrecedentState(sessionKey, true)
     setDisplay(contentEl, dirNameArrowEl, isHidden)
     dirNameContainerEl.addEventListener('click', () => {

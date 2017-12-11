@@ -202,13 +202,13 @@ nav ul a:hover {
   font-weight: bold;
 }
 
-.directoryNameContainer {
+.categoryNameContainer {
   padding: 10px 10px 6px 6px;
   color: #fff;
   display: flex;
 }
 
-.directoryArrow {
+.categoryArrow {
   font-size: 9px;
   margin-top: 1px;
   margin-right: 2px;
@@ -218,11 +218,11 @@ nav > ul {
   padding: 0;
 }
 
-.directoryContent {
+.categoryContent {
   display: none;
 }
 
-.directoryContent > ul {
+.categoryContent > ul {
   padding: 0;
 }
 
@@ -233,7 +233,7 @@ nav > ul > li > a {
   font-weight: 500;
 }
 
-.directoryContent > ul > li > a {
+.categoryContent > ul > li > a {
   margin: 0;
   color: #999;
   padding: 4px 10px 4px 10px;
